@@ -32,6 +32,13 @@ class Validator
     string.gsub(/[^\d]/, '')
   end
 
+  def is_complete?(group)
+    group.each do |collection|
+      return false unless collection.none? { |item| item == "0" }
+    end
+    return true
+  end
+  
   def is_valid?(group)
     group.each do |collection|
       collection.delete("0")
@@ -40,13 +47,6 @@ class Validator
     return true
   end
 
-  def is_complete?(group)
-    group.each do |collection|
-      return false unless collection.none? { |item| item == "0" }
-    end
-    return true
-  end
-  
   attr_reader :puzzle_string, :sudoku_board
   
 end
