@@ -1,3 +1,5 @@
+require_relative './sudoku_board'
+
 class Validator
   def initialize(puzzle_string)
     @puzzle_string = puzzle_string

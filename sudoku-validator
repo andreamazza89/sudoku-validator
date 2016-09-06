@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require_relative './lib/validator'
+
+sudoku_to_validate = File.read('./spec/fixtures/' + ARGV[0])
+
+puts Validator.validate(sudoku_to_validate)
